@@ -14,8 +14,6 @@ class App extends React.Component {
     }
 
     addFish = fish => {
-        console.log("Adding a fish!", fish);
-        
         // 1. Take a copy of the existing state
         const fishes = {...this.state.fishes};
         // 2. Add our new fish to that fishes variable
@@ -57,7 +55,7 @@ class App extends React.Component {
                                         addToOrder={this.addToOrder} />) }
                     </ul>
                 </div>
-                <Order />
+                <Order fishes={this.state.fishes} order={this.state.order} />
                 <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes} />
             </div>
         );
